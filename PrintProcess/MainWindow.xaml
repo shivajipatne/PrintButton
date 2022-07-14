@@ -6,10 +6,102 @@
         xmlns:local="clr-namespace:PrintProcess"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Print" Height="37" HorizontalAlignment="Left" Margin="637,343,0,0"  
-                Name="PrintSimpleTextButton" VerticalAlignment="top" Width="134"  
+    <!--<StackPanel Orientation="Vertical">
+        <Label>thisis slable  </Label>
+        <TextBlock>u am test box</TextBlock>
+        <CheckBox>checkbox1</CheckBox>
+        <CheckBox>checkbox2</CheckBox>
+        <ListBox>
+            <ListBoxItem>
+                Item1
+            </ListBoxItem>
+        </ListBox>
+        <ListBox>
+            <ListBoxItem>
+                Item 2
+            </ListBoxItem>
+        </ListBox>
+        <Button Content="click" Height="50" Width="100" />
+
+    </StackPanel>-->
+    <!--<WrapPanel>
+        <Button Content="click" Height="50" Width="100" />
+        <Button Content="click" Height="50" Width="100" />
+        <Button Content="click" Height="50" Width="100" />
+        <Button Content="click" Height="50" Width="100" />
+
+        <Button Content="click" Height="50" Width="100" />
+        <Button Content="click" Height="50" Width="100" />
+    </WrapPanel>-->
+    <!--<Canvas Background="Green">
+        <Label Canvas.Top="30" Canvas.Left="20">Enter here:</Label>
+        <TextBox Canvas.Top="30" Canvas.Left="120" Width="100"/>
+        <Button Canvas.Top="70" Canvas.Left="130" Content="click me!" Padding="5"/>
+        
+    </Canvas>-->
+    <!--<DockPanel>
+        <Border Height="25" Background="AliceBlue" DockPanel.Dock="Top">
+            <TextBlock>Menu</TextBlock>
+        </Border>
+        <Border Height="25" Background="Aqua" DockPanel.Dock="Top">
+            <TextBlock>Ribbon</TextBlock>            
+        </Border>
+        <Border Height=" 30" Background="LightSteelBlue" DockPanel.Dock="Bottom">
+            <TextBlock>Status</TextBlock>                
+        </Border>
+        <Border Height="200" Background="Azure" DockPanel.Dock="Left">
+            <TextBlock>left side</TextBlock>                        
+        </Border>
+        <Border Background="HotPink">
+            <TextBlock>Remaining Part</TextBlock>
+         </Border>
+
+    </DockPanel>-->
+   <!--<Grid>
+        <Button Content="Print" Height="37" HorizontalAlignment="Left" Margin="533,239,0,0"  
+                Name="PrintSimpleTextButton" VerticalAlignment="Top" Width="134"  
                 Click="PrintSimpleTextButton_Click" FontWeight="Bold" FontSize="20" />
 
+    </Grid>-->
+    <!--<Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="First NAme"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Last NAme"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Address"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="3"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="3"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="3"/>
+        <Button Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" MinWidth="80" Margin="3" Content="Submit"/>
+    </Grid>-->
+    <!--<Grid>
+        <Button Content="click me" Height="60" Width="160">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="ExtraBold"/>
+                            <Setter Property="Foreground" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>-->
+    <!--<StackPanel>
+        <Slider IsSnapToTickEnabled="True" Name="myslider" Minimum="0" Maximum="100"/>
+        <TextBox Name="mytxt" Width="50" Text="{Binding ElementName=myslider,Path=Value,Mode=OneTime , UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>-->
+
+    <Grid>
+        <Button Content="i am  button" Height=" 60" Width="100" Click="button_click"></Button>
     </Grid>
 </Window>

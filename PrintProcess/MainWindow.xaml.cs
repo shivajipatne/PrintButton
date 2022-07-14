@@ -23,42 +23,50 @@ namespace PrintProcess
         public MainWindow()
         {
             InitializeComponent();
-
+            //myslider.Value = 50;
+            //mytxt.Text = myslider.Value.ToString();
         }
-            /// <summary>  
-            /// This method creates a dynamic FlowDocument. You can add anything to this  
-            /// FlowDocument that you would like to send to the printer  
-            /// </summary>  
-            /// <returns></returns>  
-            private FlowDocument CreateFlowDocument()
-            {
-                // Create a FlowDocument  
-                FlowDocument doc = new FlowDocument();
-                // Create a Section  
-                Section sec = new Section();
-                // Create first Paragraph  
-                Paragraph p1 = new Paragraph();
-                // Create and add a new Bold, Italic and Underline  
-                Bold bld = new Bold();
-                bld.Inlines.Add(new Run("First Paragraph"));
-                Italic italicBld = new Italic();
-                italicBld.Inlines.Add(bld);
-                Underline underlineItalicBld = new Underline();
-                underlineItalicBld.Inlines.Add(italicBld);
-                // Add Bold, Italic, Underline to Paragraph  
-                p1.Inlines.Add(underlineItalicBld);
-                // Add Paragraph to Section  
-                sec.Blocks.Add(p1);
-                // Add Section to FlowDocument  
-                doc.Blocks.Add(sec);
-                return doc;
-            }
 
-            private void PrintSimpleTextButton_Click(object sender, RoutedEventArgs e)
-            {
+        private void button_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("i am a button guys");
+        }
+
+
+        /// <summary>  
+        /// This method creates a dynamic FlowDocument. You can add anything to this  
+        /// FlowDocument that you would like to send to the printer  
+        /// </summary>  
+        /// <returns></returns>  
+        private FlowDocument CreateFlowDocument()
+        {
+            // Create a FlowDocument  
+            FlowDocument doc = new FlowDocument();
+            // Create a Section  
+            Section sec = new Section();
+            // Create first Paragraph  
+            Paragraph p1 = new Paragraph();
+            // Create and add a new Bold, Italic and Underline  
+            Bold bld = new Bold();
+            bld.Inlines.Add(new Run("First Paragraph"));
+            Italic italicBld = new Italic();
+            italicBld.Inlines.Add(bld);
+            Underline underlineItalicBld = new Underline();
+            underlineItalicBld.Inlines.Add(italicBld);
+            // Add Bold, Italic, Underline to Paragraph  
+            p1.Inlines.Add(underlineItalicBld);
+            // Add Paragraph to Section  
+            sec.Blocks.Add(p1);
+            // Add Section to FlowDocument  
+            doc.Blocks.Add(sec);
+            return doc;
+        }
+
+        private void PrintSimpleTextButton_Click(object sender, RoutedEventArgs e)
+        {
             PrintDialog printDlg = new PrintDialog();
             printDlg.PrintVisual(this, "Window Printing.");
-            }
-        
+        }
+
     }
 }
