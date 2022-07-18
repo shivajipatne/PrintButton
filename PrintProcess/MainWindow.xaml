@@ -102,6 +102,36 @@
     </StackPanel>-->
 
     <Grid>
-        <Button Content="i am  button" Height=" 60" Width="100" Click="button_click"></Button>
-    </Grid>
+        <Button Command="{Binding PrintVisual}"  Height=" 60" Width="100" Click="button_click" Content="Print"></Button>
+        <!--<Button Width="200" Click="InvokePrint">Invoke PrintDialog</Button>-->
+    </Grid>   
+    
+    
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="4" Text="First Nmae" VerticalAlignment="Center"/>
+        <TextBox Margin="4" Text="{Binding Path=Firstname}" Grid.Column="1"/>
+
+        <TextBlock Margin="4" Text="Last Name" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox Margin="4" Text="{Binding Path=Lastname}" Grid.Column="1" Grid.Row="1"/>
+
+        <TextBlock Margin="4" Text="Age" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox Margin="4" Text="{Binding Path=Age}" Grid.Column="1" Grid.Row="2"/>
+    </Grid>-->
+
+    <!--<Grid>
+        <Label Content="{Binding obj}" Foreground="Red" FontWeight="Bold" />
+    </Grid>-->
+    
+    
 </Window>

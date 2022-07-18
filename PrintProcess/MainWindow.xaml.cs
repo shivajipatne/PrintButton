@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,61 +15,46 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Xps.Packaging;
 
 namespace PrintProcess
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>z
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
-            //myslider.Value = 50;
-            //mytxt.Text = myslider.Value.ToString();
         }
+//###############print dialogue open ###################
+        //private void button_click(object sender, RoutedEventArgs e)
+        //{
+        //    //MessageBox.Show("i am a button guys");
 
+        //    PrintDialog dlg = new PrintDialog();
+        //    dlg.ShowDialog();
+        //}
+
+
+//####print button code to print the dialogue####################
         private void button_click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("i am a button guys");
-        }
+            // Create the print dialog object and set options
+            PrintDialog pDialog = new PrintDialog();
+            pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+            pDialog.UserPageRangeEnabled = true;
 
-
-        /// <summary>  
-        /// This method creates a dynamic FlowDocument. You can add anything to this  
-        /// FlowDocument that you would like to send to the printer  
-        /// </summary>  
-        /// <returns></returns>  
-        private FlowDocument CreateFlowDocument()
-        {
-            // Create a FlowDocument  
-            FlowDocument doc = new FlowDocument();
-            // Create a Section  
-            Section sec = new Section();
-            // Create first Paragraph  
-            Paragraph p1 = new Paragraph();
-            // Create and add a new Bold, Italic and Underline  
-            Bold bld = new Bold();
-            bld.Inlines.Add(new Run("First Paragraph"));
-            Italic italicBld = new Italic();
-            italicBld.Inlines.Add(bld);
-            Underline underlineItalicBld = new Underline();
-            underlineItalicBld.Inlines.Add(italicBld);
-            // Add Bold, Italic, Underline to Paragraph  
-            p1.Inlines.Add(underlineItalicBld);
-            // Add Paragraph to Section  
-            sec.Blocks.Add(p1);
-            // Add Section to FlowDocument  
-            doc.Blocks.Add(sec);
-            return doc;
-        }
-
-        private void PrintSimpleTextButton_Click(object sender, RoutedEventArgs e)
-        {
-            PrintDialog printDlg = new PrintDialog();
-            printDlg.PrintVisual(this, "Window Printing.");
-        }
-
+            // Display the dialog. This returns true if the user presses the Print button.
+            Nullable<Boolean> print = pDialog.ShowDialog();
+            if (print == true)
+            {
+                XpsDocument xpsDocument = new XpsDocument("C:\\FixedDocumentSequence.xps", FileAccess.ReadWrite);
+                FixedDocumentSequence fixedDocSeq = xpsDocument.GetFixedDocumentSequence();
+                pDialog.PrintDocument(fixedDocSeq.DocumentPaginator, "Test print job");
+            }
+        }      
     }
 }
