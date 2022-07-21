@@ -151,12 +151,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0"/>
         </Grid.ColumnDefinitions>
-        <Button Name="btnClickMe" Height="75" Margin="42,122,41,122" Click="btnClickMe_Click">
+        <Button Name="btnClickMe" Height="75" Margin="42,122,41,122" Click="btnClickMe_Click" PreviewMouseMove="btnClickMe_PreviewMouseMove">
             <StackPanel Orientation="Horizontal">
                 <Label Height="50" FontSize="20">Labe DIaplya!</Label>
                 <Canvas Height="50" Width="100" >
                     <Ellipse Name="outEclipse" Fill="Green" Height="50" Width="90" Cursor="Hand" MouseDown="outEclipse_MouseDown"/>
-                    <Button Content="Inner Button" Name="InnButton" Height="25" Width="78" Cursor="Hand" Canvas.Left="-223" Canvas.Top="13" Click="InnButton_Click"/>
+                    <Button Content="Inner Button" Name="InnButton" Height="25" Width="78" Cursor="Hand" Canvas.Left="-223" Canvas.Top="13" Click="InnButton_Click" PreviewMouseMove="InnButton_PreviewMouseMove"/> <!--//trying upwords that is called bubbling event-->
                     <Ellipse Name="innereliipse" Fill="Yellow" Height="51" Width="82" Canvas.Top="-1" Canvas.Left="110" RenderTransformOrigin="2.765,0.744" />
                 </Canvas>
             </StackPanel>

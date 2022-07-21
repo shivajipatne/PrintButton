@@ -37,12 +37,23 @@ namespace PrintProcess
 
         private void outEclipse_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("i am green eclipse");
+
+            this.Title = "this eclips change the title";
         }
 
         private void InnButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("i am the inner button");
+        }
+
+        private void btnClickMe_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("muse moved by outer button");
+        }
+
+        private void InnButton_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("muse moved by inner button");
         }
 
 
