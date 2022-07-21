@@ -155,8 +155,8 @@
             <StackPanel Orientation="Horizontal">
                 <Label Height="50" FontSize="20">Labe DIaplya!</Label>
                 <Canvas Height="50" Width="100" >
-                    <Ellipse Name="outEclipse" Fill="Green" Height="50" Width="90" Cursor="Hand"/>
-                    <Button Content="Inner Button" Name="InnButton" Height="25" Width="78" Cursor="Hand" Canvas.Left="-223" Canvas.Top="13"/>
+                    <Ellipse Name="outEclipse" Fill="Green" Height="50" Width="90" Cursor="Hand" MouseDown="outEclipse_MouseDown"/>
+                    <Button Content="Inner Button" Name="InnButton" Height="25" Width="78" Cursor="Hand" Canvas.Left="-223" Canvas.Top="13" Click="InnButton_Click"/>
                     <Ellipse Name="innereliipse" Fill="Yellow" Height="51" Width="82" Canvas.Top="-1" Canvas.Left="110" RenderTransformOrigin="2.765,0.744" />
                 </Canvas>
             </StackPanel>

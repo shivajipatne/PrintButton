@@ -35,6 +35,16 @@ namespace PrintProcess
             MessageBox.Show("i am the outer button");
         }
 
+        private void outEclipse_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("i am green eclipse");
+        }
+
+        private void InnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("i am the inner button");
+        }
+
 
         //###############print dialogue open ###################
         //private void button_click(object sender, RoutedEventArgs e)
