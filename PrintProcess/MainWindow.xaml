@@ -101,13 +101,25 @@
         <TextBox Name="mytxt" Width="50" Text="{Binding ElementName=myslider,Path=Value,Mode=OneTime , UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>-->
 
-    <Grid>
-        <Button Command="{Binding PrintVisual}"  Height=" 60" Width="100" Click="button_click" Content="Print"></Button>
-        <!--<Button Width="200" Click="InvokePrint">Invoke PrintDialog</Button>-->
-    </Grid>   
-    
-    
+    <!--<Grid>
+        <StackPanel>
+            <RichTextBox Name="EulaRichTextBox">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run>Paragraph 1</Run>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
 
+            --><!--<Button Click="SaveRTBContent">Save RTB Content</Button>
+            <Button Click="LoadRTBContent">Load RTB Content</Button>-->
+            <!--<Button Click="PrintRTBContent">Print RTB Content</Button>--><!--
+            <Button Height=" 60" Width="100" Click="button_click" Content="Print"></Button>
+        </StackPanel>
+        
+        --><!--<Button Width="200" Click="InvokePrint">Invoke PrintDialog</Button>--><!--
+    </Grid>-->   
+    
     <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
@@ -132,6 +144,23 @@
     <!--<Grid>
         <Label Content="{Binding obj}" Foreground="Red" FontWeight="Bold" />
     </Grid>-->
-    
-    
+
+    <!--###################routing evnets for bubling event example##########################:-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="btnClickMe" Height="75" Margin="42,122,41,122" Click="btnClickMe_Click">
+            <StackPanel Orientation="Horizontal">
+                <Label Height="50" FontSize="20">Labe DIaplya!</Label>
+                <Canvas Height="50" Width="100" >
+                    <Ellipse Name="outEclipse" Fill="Green" Height="50" Width="90" Cursor="Hand"/>
+                    <Button Content="Inner Button" Name="InnButton" Height="25" Width="78" Cursor="Hand" Canvas.Left="-223" Canvas.Top="13"/>
+                    <Ellipse Name="innereliipse" Fill="Yellow" Height="51" Width="82" Canvas.Top="-1" Canvas.Left="110" RenderTransformOrigin="2.765,0.744" />
+                </Canvas>
+            </StackPanel>
+        </Button>
+    </Grid>
+ <!--##############################################-->
 </Window>

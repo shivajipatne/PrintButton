@@ -29,7 +29,14 @@ namespace PrintProcess
         {
             InitializeComponent();
         }
-//###############print dialogue open ###################
+
+        private void btnClickMe_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("i am the outer button");
+        }
+
+
+        //###############print dialogue open ###################
         //private void button_click(object sender, RoutedEventArgs e)
         //{
         //    //MessageBox.Show("i am a button guys");
@@ -38,23 +45,43 @@ namespace PrintProcess
         //    dlg.ShowDialog();
         //}
 
+        //###########################################################################
+        //void button_click(Object sender, RoutedEventArgs args)
+        //{
+        //    PrintCommand();
+        //}
 
-//####print button code to print the dialogue####################
-        private void button_click(object sender, RoutedEventArgs e)
-        {
-            // Create the print dialog object and set options
-            PrintDialog pDialog = new PrintDialog();
-            pDialog.PageRangeSelection = PageRangeSelection.AllPages;
-            pDialog.UserPageRangeEnabled = true;
 
-            // Display the dialog. This returns true if the user presses the Print button.
-            Nullable<Boolean> print = pDialog.ShowDialog();
-            if (print == true)
-            {
-                XpsDocument xpsDocument = new XpsDocument("C:\\FixedDocumentSequence.xps", FileAccess.ReadWrite);
-                FixedDocumentSequence fixedDocSeq = xpsDocument.GetFixedDocumentSequence();
-                pDialog.PrintDocument(fixedDocSeq.DocumentPaginator, "Test print job");
-            }
-        }      
+        //private void PrintCommand()
+        //{
+        //    PrintDialog pd = new PrintDialog();
+        //    if ((pd.ShowDialog() == true))
+        //    {
+        //        //use either one of the below
+        //        pd.PrintVisual(EulaRichTextBox as Visual, "printing as visual");
+        //        //pd.PrintDocument(((IDocumentPaginatorSource)richTB.Document).DocumentPaginator, "printing as paginator");
+        //    }
+        //}
+        //####print button code to print the dialogue####################
+
+
+
+
+        //private void button_click(object sender, RoutedEventArgs e)
+        //{
+        //    // Create the print dialog object and set options
+        //    PrintDialog pDialog = new PrintDialog();
+        //    pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+        //    pDialog.UserPageRangeEnabled = true;
+
+        //    // Display the dialog. This returns true if the user presses the Print button.
+        //    Nullable<Boolean> print = pDialog.ShowDialog();
+        //    if (print == true)
+        //    {
+        //        XpsDocument xpsDocument = new XpsDocument("C:\\text.txt", FileAccess.ReadWrite);
+        //        FixedDocumentSequence fixedDocSeq = xpsDocument.GetFixedDocumentSequence();
+        //        pDialog.PrintDocument(fixedDocSeq.DocumentPaginator, "Test print job");
+        //    }
+        //}      
     }
 }
