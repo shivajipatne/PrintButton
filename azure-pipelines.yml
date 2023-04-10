@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'Shivaji_Inspiron'
 
 variables:
   solution: '**/*.sln'
